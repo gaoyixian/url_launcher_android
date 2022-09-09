@@ -75,11 +75,12 @@ public class WebViewActivity extends Activity {
         public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
           if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
               String mUrl = request.getUrl().toString();
-              if (mUrl.contains("http")) {
+              if (mUrl.startsWith("http")) {
                   view.loadUrl(mUrl);
+                  return false;
               }
           }
-          return false;
+          return true;
         }
       };
 
