@@ -11,15 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="40dp">
 
-        <TextView
+        <ImageView
             android:id="@+id/btn_complete"
-            android:layout_width="60dp"
-            android:layout_height="40dp"
-            android:layout_alignParentLeft="true"
-            android:gravity="center"
-            android:text="返回"
-            android:textSize="14sp"
-            android:textColor="@android:color/holo_blue_light"/>
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:src="@drawable/ic_back"
+            android:scaleType="center"
+            android:layout_centerVertical="true"/>
 
         <TextView
             android:id="@+id/tv_title"
