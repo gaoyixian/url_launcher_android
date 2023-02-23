@@ -81,7 +81,7 @@ public class WebViewActivity extends Activity {
                 String mUrl = request.getUrl().toString();
                 if (mUrl.startsWith("http")) {
                     view.loadUrl(mUrl);
-                    return true;
+                    return false;
                 } else if (mUrl.startsWith("weixin://") || mUrl.startsWith("alipays://") || mUrl.startsWith("mailto://") || mUrl.startsWith("tel://")) {
                     try {
                         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(mUrl));
@@ -219,8 +219,6 @@ public class WebViewActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        webview.clearCache(true);
-        webview.clearHistory();
         unregisterReceiver(broadcastReceiver);
     }
 
